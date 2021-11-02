@@ -97,7 +97,14 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
+  % There must be a better way to search a list in octave, but
+  % I will just use a for loop.
+  
+    for i = 1:length(vocabList)
+        if (strcmp(str, vocabList{i}))
+            word_indices = [word_indices ; i];
+        endif
+    endfor
 
 
 

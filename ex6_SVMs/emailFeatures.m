@@ -48,7 +48,13 @@ x = zeros(n, 1);
 %
 %
 
-
+    % Loop through word indices and set feature vector to 1 where
+    % a word exists.
+    
+    for i = 1:length(word_indices)
+        idx = word_indices(i);
+        x(idx) = 1;
+    endfor
 
 
 
