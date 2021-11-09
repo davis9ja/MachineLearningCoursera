@@ -26,9 +26,25 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+% In Python, you could very simply use a numpy function like argwhere to get
+% the indices of a list that satisfy a boolean condition. Not sure how to do
+% this in Octave without writing a function to do it for you. Octave is an
+% educational language, so I'm not going to worry about it.
 
+counts = zeros(K, 1)
 
+for i = 1:m
+  for j = 1:K
+    if ( idx(i) == j )
+      centroids(j,:) += X(i,:)
+      counts(j,1) += 1
+    endif
+  endfor
+endfor
 
+for i = 1:K
+  centroids(i,:) /= counts(i,1)
+endfor
 
 
 

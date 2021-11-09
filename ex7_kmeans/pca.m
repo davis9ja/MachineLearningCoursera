@@ -21,7 +21,9 @@ S = zeros(n);
 %
 
 
+cov_mat = X'*X/m
 
+[U, S, V] = svd(cov_mat)
 
 
 
